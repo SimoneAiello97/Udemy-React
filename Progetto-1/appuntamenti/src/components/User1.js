@@ -6,7 +6,7 @@ const User1 = () => {
     const[people,setPeople] =useState(data)
 
     const removePerson = (id) => {
-    let newPeople = people.filter((el) => el.id !== id)
+    let newPeople = people.filter((el) => el.id !== id) 
     setPeople(()=>{
         return newPeople})
     }
