@@ -36,10 +36,14 @@ const Users = () => {
         let container = document.querySelector('#container');
         let bottone = document.querySelector('#button');
         let cards = document.querySelectorAll('.card');
+        let body = document.querySelector('body');
+        let hr = document.querySelectorAll('.hr');
 
         if(darkmode){
+            body?.classList.remove('bg-dark')
             container?.classList.remove('bg-dark')
             container?.classList.add('bg-light')
+            body?.classList.add('bg-light')
 
             bottone?.classList.remove('btn-danger')
             bottone?.classList.remove('text-white')
@@ -52,10 +56,17 @@ const Users = () => {
                 card.classList.add('text-dark');
                 card.classList.add('bg-light');
             })
+
+            hr.forEach(hr =>{
+            hr?.classList.remove('border-danger');
+            hr?.classList.add('border-primary')
+            })
         }
         else{
             container?.classList.remove('bg-light')
+            body?.classList.remove('bg-light')
             container?.classList.add('bg-dark')
+            body?.classList.add('bg-dark')
 
             bottone?.classList.remove('btn-primary')
             bottone?.classList.remove('text-dark')
@@ -67,6 +78,11 @@ const Users = () => {
                 card.classList.add('bg-secondary');
                 card.classList.add('text-light');
             })
+
+            hr.forEach(hr =>{
+                hr?.classList.remove('border-primary')
+                hr?.classList.add('border-danger');
+                })
         }
     },[darkmode])
 
@@ -81,7 +97,7 @@ const Users = () => {
 
 
   return (
-    <div className='container-fluid' id='container'>
+    <div className='container-fluid h-100' id='container'>
         <div className='row  flex-column align-items-center'>
                     <div className='col-6'>
             <button className='btn btn-primary 
@@ -97,8 +113,9 @@ const Users = () => {
             {users.map(user =>{
             const {id, name, email} = user
             return(
-            <div  key={id}  className='card col-5 shadow m-3 p-2'>
+            <div  key={id}  className='card col-5 shadow m-3 p-2 align-items-center'>
                  <div className='fs-2'>{name}</div>
+                 <hr class="border border-danger border-2 opacity-50 w-50 hr" ></hr>
                  <div className='fs-6'>{email}</div>
             </div>
             )
