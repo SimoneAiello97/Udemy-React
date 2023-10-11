@@ -14,7 +14,67 @@ import { Navigation } from 'swiper/modules';
 
 const Recensioni = () => {
 
+/* 
+const Slide = ( props ) => {
+    const [reviews, setReviews] = useState([]);
+    const [length, setLength] = useState(0);
 
+    useEffect(() => {
+        setReviews(dataJS);
+    }, [])
+    
+    useEffect(() => {
+        setLength(reviews.length);
+        sendDataToParent();
+    }, [reviews]);
+    
+
+    
+    const sendDataToParent = () => {
+        props.sendDataToParent(reviews.length);
+    };    
+
+    const FillCards = ({id, voto, recensione, autore}) => {
+
+        function TextExample() {
+            return (
+                <Card style={{ width: '600px', marginRight: '600px' }} key={id}>
+                    <Card.Body>
+                        <Card.Title>{autore}</Card.Title>
+                        <Card.Text>
+                            {recensione}
+                        </Card.Text>
+                    </Card.Body>
+                    <Card.Footer>{voto}</Card.Footer>
+                </Card>
+            );
+        }
+
+        return <TextExample />
+    };
+
+    return (
+        <React.Fragment>
+            <div className='card-container d-flex position-absolute left-0' style={{top: '40%'}}>
+            {
+                reviews.map((review) => {
+                    const { id, voto, recensione, autore } = review;
+                    return (
+                        <FillCards
+                            key={id}
+                            id={id}
+                            voto={voto}
+                            recensione={recensione}
+                            autore={autore}
+                        />
+                    )
+                })
+            }
+            </div>
+        </React.Fragment>
+    )
+}
+ */
 
 
 
